@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useState } from 'react';
+import Square from './Square';
 
-export default function Board() {
-  return (
-    <>
-      <div className="board-row">
-        <button className="square">1</button>
-        <button className="square">2</button>
-        <button className="square">3</button>
-      </div>
-      <div className="board-row">
-        <button className="square">4</button>
-        <button className="square">5</button>
-        <button className="square">6</button>
-      </div>
-      <div className="board-row">
-        <button className="square">7</button>
-        <button className="square">8</button>
-        <button className="square">9</button>
-      </div>
-    </>
-  );
+export default function Board({playerTurn, setPlayerTurn}) {
+    const [squareVal, setSquareVal] = useState();
+    function checkGameOver() {
+        console.log('Run check win function')
+    }
+    function handleClick() {
+        alert('clicked!')
+        checkGameOver();
+    }
+    return (
+        <>
+            <div className="board-row">
+                <button className="square" onClick={handleClick}>1</button>
+                <button className="square" onClick={handleClick}>2</button>
+                <button className="square" onClick={handleClick}>3</button>
+            </div>
+            <div className="board-row">
+                <button className="square" onClick={handleClick}>4</button>
+                <button className="square" onClick={handleClick}>5</button>
+                <button className="square" onClick={handleClick}>6</button>
+            </div>
+            <div className="board-row">
+                <button className="square" onClick={handleClick}>7</button>
+                <button className="square" onClick={handleClick}>8</button>
+                <button className="square" onClick={handleClick}>9</button>
+            </div>
+        </>
+    )
 }
